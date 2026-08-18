@@ -22,8 +22,8 @@ jobs:
       - run: |
           bash згенерувати.sh
           cd .будування
-          git config --local user.name "КДБ"
-          git config --local user.email "prykhozhdenko@gmail.com"
+          git config --local user.name "Промова Дій"
+          git config --local user.email "diysnist@gmail.com"
           git add .
           git commit -m "🧬"
       - uses: ad-m/github-push-action@master
