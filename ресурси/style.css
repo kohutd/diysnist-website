@@ -2,6 +2,9 @@
   --max-width: 300px;
   --text-color: black;
   --background-color: white;
+  --page-pattern: url("./дія.svg");
+  --pattern-opacity: 0.025;
+  --pattern-size: 20px;
   --blockquote-border-color: black;
   --blockquote-background-color: #f0f0f0;
   --border-color: #cccccc;
@@ -18,6 +21,7 @@
 }
 
 body {
+  position: relative;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -31,10 +35,31 @@ body {
   padding-bottom: 2rem;
 }
 
+/* body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: var(--background-color);
+  background-image: var(--page-pattern);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: var(--pattern-size) var(--pattern-size);
+  opacity: var(--pattern-opacity);
+  pointer-events: none;
+  z-index: 0;
+} */
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: white;
     --background-color: black;
+    --page-pattern: url("./дія_темно.svg");
+    --pattern-opacity: 0.005;
     --blockquote-border-color: white;
     --blockquote-background-color: #202020;
     --border-color: #444444;
